@@ -36,6 +36,8 @@
    Desc:   Class to encapsule a visualized robot state that can be controlled using an interactive marker
 */
 
+#define _USE_MATH_DEFINES
+
 // MoveIt
 #include <moveit/robot_state/conversions.h>
 #include <moveit/transforms/transforms.h>

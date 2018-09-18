@@ -1,8 +1,12 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(moveit_visual_tools)
 
-# C++ 11 required for OMPL
-add_compile_options(-std=c++11)
+if(NOT MSVC)
+  # C++ 11 required for OMPL
+  add_compile_options(-std=c++11)
+else()
+  add_compile_options(/Zc:__cplusplus)
+endif()
 
 # Load catkin and all dependencies required for this package
 find_package(catkin REQUIRED COMPONENTS
@@ -60,6 +64,7 @@ add_dependencies(${PROJECT_NAME} graph_msgs_generate_messages_cpp)
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 )
+set_target_properties(${PROJECT_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 
 # Demo executable
 add_executable(${PROJECT_NAME}_demo src/${PROJECT_NAME}_demo.cpp)
@@ -81,7 +86,10 @@ roslint_cpp()
 
 # Install libraries
 install(TARGETS ${PROJECT_NAME}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
 
 # Install header files
 install(DIRECTORY include/${PROJECT_NAME}/   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})

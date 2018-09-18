@@ -36,6 +36,8 @@
    Desc:   Class to encapsule a visualized robot state that can be controlled using an interactive marker
 */
 
+#define _USE_MATH_DEFINES
+
 // Boost
 #include <boost/filesystem.hpp>
 

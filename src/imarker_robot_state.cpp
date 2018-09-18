@@ -36,6 +36,7 @@
    Desc:   Class to encapsule a visualized robot state that can be controlled using an interactive marker
 */
 
+#define _DISABLE_EXTENDED_ALIGNED_STORAGE
 #define _USE_MATH_DEFINES
 
 // MoveIt

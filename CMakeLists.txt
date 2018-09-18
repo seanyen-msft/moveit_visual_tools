@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rviz_visual_tools
   tf2_eigen
   geometry_msgs
-  moveit_ros_planning
+  moveit_ros_robot_interaction
   moveit_core
   roscpp
   tf2_ros
@@ -34,7 +34,7 @@ catkin_package(
     ${PROJECT_NAME}
   CATKIN_DEPENDS
     rviz_visual_tools
-    moveit_ros_planning
+    moveit_ros_robot_interaction
     moveit_core
     geometry_msgs
     visualization_msgs

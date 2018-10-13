@@ -37,7 +37,6 @@
 */
 
 #define _DISABLE_EXTENDED_ALIGNED_STORAGE
-#define _USE_MATH_DEFINES
 
 // MoveIt
 #include <moveit/robot_state/conversions.h>

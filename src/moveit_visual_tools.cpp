@@ -35,8 +35,6 @@
 // Author: Dave Coleman
 // Desc:   Simple tools for showing parts of a robot in Rviz, such as the gripper or arm
 
-#define _USE_MATH_DEFINES
-
 #include <moveit_visual_tools/moveit_visual_tools.h>
 
 // MoveIt Messages

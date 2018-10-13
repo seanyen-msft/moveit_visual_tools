@@ -1,12 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(moveit_visual_tools)
 
-if(NOT MSVC)
-  # C++ 11 required for OMPL
-  add_compile_options(-std=c++11)
-else()
-  add_compile_options(/Zc:__cplusplus)
-endif()
+# C++ 11 required for OMPL
+add_compile_options(-std=c++11)
 
 # Load catkin and all dependencies required for this package
 find_package(catkin REQUIRED COMPONENTS
